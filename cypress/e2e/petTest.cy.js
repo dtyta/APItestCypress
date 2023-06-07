@@ -115,5 +115,4 @@ it('Deletes a pet', () => {
   }).then(response => {
     expect(response.status).to.be.equal(404);
 })
-
 })
