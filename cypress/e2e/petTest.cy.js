@@ -33,7 +33,6 @@ it('Create pet', () => {
 
 it('Get pet by id', () => {
   cy.log(`Get pet with id: ${pet.id}`)
-
   cy.request('GET', `/pet/${pet.id}`).then( response => {
     expect(response.status).to.be.equal(200);
     expect(response.body.id).to.be.equal(pet.id);
@@ -45,7 +44,6 @@ it('Get pet by id', () => {
 
 it('Update pet', () => {
   cy.log(`Update pet with id: ${pet.id}`)
-
   pet.name = 'Qweqwe';
   pet.status = 'sold'
   cy.request('PUT', '/pet', pet).then( response => {
@@ -66,7 +64,6 @@ it('Update pet', () => {
 
 it('Find pet by status', () => {
   cy.log(`Find pet with id: ${pet.id}`)
-
   cy.request('GET', `/pet/findByStatus?status=${pet.status}`).then( response => {
     expect(response.status).to.be.equal(200);
 
